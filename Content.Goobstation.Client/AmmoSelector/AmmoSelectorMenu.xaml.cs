@@ -23,7 +23,6 @@ public sealed partial class AmmoSelectorMenu : RadialMenu
 {
     [Dependency] private readonly EntityManager _entManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private SpriteSystem _sprites;
 
@@ -59,6 +58,7 @@ public sealed partial class AmmoSelectorMenu : RadialMenu
 
             var button = new AmmoSelectorMenuButton
             {
+                StyleClasses = { "RadialMenuButton" },
                 SetSize = new Vector2(64, 64),
                 ToolTip = Loc.GetString(prototype.Desc),
                 ProtoId = prototype.ID
@@ -95,7 +95,7 @@ public sealed partial class AmmoSelectorMenu : RadialMenu
     }
 }
 
-public sealed class AmmoSelectorMenuButton : RadialMenuTextureButtonWithSector
+public sealed class AmmoSelectorMenuButton : RadialMenuTextureButton
 {
     public ProtoId<SelectableAmmoPrototype> ProtoId { get; set; }
 }

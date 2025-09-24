@@ -63,6 +63,7 @@ public sealed class LivingHeartMenu : RadialMenu
 
             var button = new EmbeddedEntityMenuButton
             {
+                StyleClasses = { "RadialMenuButton" },
                 SetSize = new Vector2(64, 64),
                 ToolTip = target.Profile.Name,
                 NetEntity = target.Entity,
@@ -102,7 +103,7 @@ public sealed class LivingHeartMenu : RadialMenu
         }
     }
 
-    public sealed class EmbeddedEntityMenuButton : RadialMenuTextureButtonWithSector
+    public sealed class EmbeddedEntityMenuButton : RadialMenuTextureButton
     {
         public NetEntity NetEntity;
     }

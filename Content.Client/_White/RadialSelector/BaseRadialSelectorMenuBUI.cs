@@ -39,7 +39,7 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
         var container = new RadialContainer
         {
             Name = !string.IsNullOrEmpty(parentCategory) ? parentCategory : "Main",
-            InitialRadius = 48f + 24f * MathF.Log(entries.Count),
+            Radius = 48f + 24f * MathF.Log(entries.Count),
         };
 
         menu.AddChild(container);
@@ -50,7 +50,7 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
             if (entry.Category != null)
             {
                 var button = CreateButton(entry.Category.Name, _spriteSystem.Frame0(entry.Category.Icon));
-                button.TargetLayer = container;
+                button.TargetLayer = entry.Category.Name;
                 CreateMenu(entry.Category.Entries, menu, entry.Category.Name);
                 container.AddChild(button);
             }

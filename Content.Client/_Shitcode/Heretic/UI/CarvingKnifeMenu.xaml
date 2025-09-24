@@ -20,7 +20,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <ui:RadialContainer Name="Main"
                         VerticalExpand="True"
                         HorizontalExpand="True"
-                        InitialRadius="100"
+                        Radius="64"
                         ReserveSpaceForHiddenChildren="False" />
 
 </ui:RadialMenu>

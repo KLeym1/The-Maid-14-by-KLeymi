@@ -60,6 +60,7 @@ public sealed partial class ToggleableClothingRadialMenu : RadialMenu
 
             var button = new ToggleableClothingRadialMenuButton()
             {
+                StyleClasses = { "RadialMenuButton" },
                 SetSize = new Vector2(64, 64),
                 ToolTip = tooltipText,
                 AttachedClothingId = attached.Key
@@ -106,7 +107,7 @@ public sealed partial class ToggleableClothingRadialMenu : RadialMenu
     }
 }
 
-public sealed class ToggleableClothingRadialMenuButton : RadialMenuTextureButtonWithSector
+public sealed class ToggleableClothingRadialMenuButton : RadialMenuTextureButton
 {
     public EntityUid AttachedClothingId { get; set; }
 }

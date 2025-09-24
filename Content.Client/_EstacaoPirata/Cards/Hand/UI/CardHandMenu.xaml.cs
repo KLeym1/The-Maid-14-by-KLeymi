@@ -66,6 +66,7 @@ public sealed partial class CardHandMenu : RadialMenu
 
             var button = new CardMenuButton()
             {
+                StyleClasses = { "RadialMenuButton" },
                 SetSize = new Vector2(64f, 64f),
                 ToolTip = cardName,
             };
@@ -99,7 +100,7 @@ public sealed partial class CardHandMenu : RadialMenu
     }
 }
 
-public sealed class CardMenuButton : RadialMenuTextureButtonWithSector
+public sealed class CardMenuButton : RadialMenuTextureButton
 {
     public CardMenuButton()
     {

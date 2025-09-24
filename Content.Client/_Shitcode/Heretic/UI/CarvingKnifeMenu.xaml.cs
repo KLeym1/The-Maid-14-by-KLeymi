@@ -56,6 +56,7 @@ public sealed class CarvingKnifeMenu : RadialMenu
 
             var button = new CarvingKnifeMenuButton
             {
+                StyleClasses = { "RadialMenuButton" },
                 SetSize = new Vector2(64, 64),
                 ToolTip = Loc.GetString(prototype.Desc),
                 ProtoId = prototype.ID
@@ -92,7 +93,7 @@ public sealed class CarvingKnifeMenu : RadialMenu
     }
 }
 
-public sealed class CarvingKnifeMenuButton : RadialMenuTextureButtonWithSector
+public sealed class CarvingKnifeMenuButton : RadialMenuTextureButton
 {
     public ProtoId<RuneCarvingPrototype> ProtoId { get; set; }
 }

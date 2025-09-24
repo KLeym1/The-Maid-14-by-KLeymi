@@ -57,6 +57,7 @@ public sealed partial class SpellbladeMenu : RadialMenu
 
             var button = new SpellbladeMenuButton
             {
+                StyleClasses = { "RadialMenuButton" },
                 SetSize = new Vector2(64, 64),
                 ToolTip = Loc.GetString(prototype.Desc),
                 ProtoId = prototype.ID
@@ -93,7 +94,7 @@ public sealed partial class SpellbladeMenu : RadialMenu
     }
 }
 
-public sealed class SpellbladeMenuButton : RadialMenuTextureButtonWithSector
+public sealed class SpellbladeMenuButton : RadialMenuTextureButton
 {
     public ProtoId<SpellbladeEnchantmentPrototype> ProtoId { get; set; }
 }
