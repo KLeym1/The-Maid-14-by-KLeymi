@@ -86,7 +86,6 @@ namespace Content.Server.Communications
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-        // [Dependency] private string _currentLevel = string.Empty;
         private const float UIUpdateInterval = 5.0f;
 
         public override void Initialize()
@@ -95,8 +94,6 @@ namespace Content.Server.Communications
             // All events that refresh the BUI
             SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
             SubscribeLocalEvent<CommunicationsConsoleComponent, ComponentInit>((uid, comp, _) => UpdateCommsConsoleInterface(uid, comp));
-            // SubscribeLocalEvent<CommunicationsConsoleComponent, ComponentInit>((uid, comp, _) => CanCallOrRecall(uid, comp));
-            // SubscribeLocalEvent<FlightVisualsComponent, ComponentStartup>(OnStartup);
             SubscribeLocalEvent<RoundEndSystemChangedEvent>(_ => OnGenericBroadcastEvent());
             SubscribeLocalEvent<AlertLevelDelayFinishedEvent>(_ => OnGenericBroadcastEvent());
 
