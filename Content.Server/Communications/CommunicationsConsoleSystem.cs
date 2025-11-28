@@ -86,14 +86,17 @@ namespace Content.Server.Communications
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-
+        // [Dependency] private string _currentLevel = string.Empty;
         private const float UIUpdateInterval = 5.0f;
 
         public override void Initialize()
         {
+            base.Initialize();
             // All events that refresh the BUI
             SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
             SubscribeLocalEvent<CommunicationsConsoleComponent, ComponentInit>((uid, comp, _) => UpdateCommsConsoleInterface(uid, comp));
+            // SubscribeLocalEvent<CommunicationsConsoleComponent, ComponentInit>((uid, comp, _) => CanCallOrRecall(uid, comp));
+            // SubscribeLocalEvent<FlightVisualsComponent, ComponentStartup>(OnStartup);
             SubscribeLocalEvent<RoundEndSystemChangedEvent>(_ => OnGenericBroadcastEvent());
             SubscribeLocalEvent<AlertLevelDelayFinishedEvent>(_ => OnGenericBroadcastEvent());
 
@@ -204,6 +207,7 @@ namespace Content.Server.Communications
                         }
                     }
 
+
                     currentLevel = alertComp.CurrentLevel;
                     currentDelay = _alertLevelSystem.GetAlertLevelDelay(stationUid.Value, alertComp);
                 }
@@ -211,7 +215,7 @@ namespace Content.Server.Communications
 
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
                 CanAnnounce(comp),
-                CanCallOrRecall(comp),
+                CanCallOrRecall(uid, comp),
                 levels,
                 currentLevel,
                 currentDelay,
@@ -233,7 +237,7 @@ namespace Content.Server.Communications
             return true;
         }
 
-        private bool CanCallOrRecall(CommunicationsConsoleComponent comp)
+        private bool CanCallOrRecall(EntityUid uid, CommunicationsConsoleComponent comp)
         {
             // Defer to what the round end system thinks we should be able to do.
             if (_emergency.EmergencyShuttleArrived || !_roundEndSystem.CanCallOrRecall())
@@ -248,8 +252,40 @@ namespace Content.Server.Communications
                 return true;
 
             // Recalling shuttle checks
+            // string currentLevel = _currentLevel;
             var recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPoint);
 
+            var stationUid = _stationSystem.GetOwningStation(uid);
+            string currentLevel = default!;
+
+            if (stationUid != null)
+            {
+                if (TryComp(stationUid.Value, out AlertLevelComponent? alertComp) &&
+                    alertComp.AlertLevels != null)
+                {
+                    currentLevel = alertComp.CurrentLevel;                  
+                }
+            }
+
+
+            switch (currentLevel)
+            {
+            case "blue":
+            case "yellow":
+            case "violet":
+                recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPointForBlue);
+            break;
+            case "green":
+                recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPoint);
+            break;
+            case "red":
+                recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPointForRed);
+            break;
+            default:
+                recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPoint);
+            break;
+            }
+            
             // shouldn't really be happening if we got here
             if (_roundEndSystem.ShuttleTimeLeft is not { } left
                 || _roundEndSystem.ExpectedShuttleLength is not { } expected)
@@ -348,7 +384,7 @@ namespace Content.Server.Communications
 
         private void OnCallShuttleMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleCallEmergencyShuttleMessage message)
         {
-            if (!CanCallOrRecall(comp))
+            if (!CanCallOrRecall(uid, comp))
                 return;
 
             var mob = message.Actor;
@@ -373,7 +409,7 @@ namespace Content.Server.Communications
 
         private void OnRecallShuttleMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleRecallEmergencyShuttleMessage message)
         {
-            if (!CanCallOrRecall(comp))
+            if (!CanCallOrRecall(uid, comp))
                 return;
 
             if (!CanUse(message.Actor, uid))
