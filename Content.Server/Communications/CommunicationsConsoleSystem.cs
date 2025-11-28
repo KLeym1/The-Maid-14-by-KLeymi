@@ -264,23 +264,12 @@ namespace Content.Server.Communications
             }
 
 
-            switch (currentLevel)
+            recallThreshold = _cfg.GetCVar(currentLevel switch
             {
-            case "blue":
-            case "yellow":
-            case "violet":
-                recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPointForBlue);
-            break;
-            case "green":
-                recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPoint);
-            break;
-            case "red":
-                recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPointForRed);
-            break;
-            default:
-                recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPoint);
-            break;
-            }
+                "blue" or "yellow" or "violet" => CCVars.EmergencyRecallTurningPointForBlue,
+                "red" => CCVars.EmergencyRecallTurningPointForRed,
+                _ => CCVars.EmergencyRecallTurningPoint
+            });
             
             // shouldn't really be happening if we got here
             if (_roundEndSystem.ShuttleTimeLeft is not { } left
