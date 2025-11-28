@@ -249,7 +249,6 @@ namespace Content.Server.Communications
                 return true;
 
             // Recalling shuttle checks
-            // string currentLevel = _currentLevel;
             var recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPoint);
 
             var stationUid = _stationSystem.GetOwningStation(uid);
