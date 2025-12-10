@@ -214,6 +214,7 @@
     - ExperimentalScienceGoob
     - MechBoardsScience
     - Pinpointers
+    - Genetics
     # Einstein Engines Packs
     - Translators
     - TranslatorImplanters
@@ -262,6 +263,7 @@
     - LatheMiscStatic
     - ChemistryStatic
     - TapeRecorderStatic
+    - CondimentStatic
     dynamicPacks:
     - Janitor
     - Instruments

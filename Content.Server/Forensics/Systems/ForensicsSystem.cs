@@ -97,6 +97,7 @@ using Content.Server.DoAfter;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Forensics.Components;
 using Content.Server.Popups;
+using Content.Shared.Body.Events;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Chemistry.Components;
@@ -238,7 +239,11 @@ namespace Content.Server.Forensics
         private void OnRehydrated(Entity<ForensicsComponent> ent, ref GotRehydratedEvent args)
         {
             CopyForensicsFrom(ent.Comp, args.Target);
-            Dirty(args.Target, ent.Comp); // Einstein Engines
+
+            if (TryComp<ForensicsComponent>(args.Target, out var targetForensics))
+            {
+                Dirty(args.Target, targetForensics);
+            }
         }
 
         /// <summary>
