@@ -1297,8 +1297,8 @@
   - type: Sprite
     sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi #if you change this, please update the humanoid.yml with a better markers sprite.
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
-  - type: _Maid/ToggleableClothing # Goobstation - Modsuits change
+    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
+  - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitERTChaplain
 
