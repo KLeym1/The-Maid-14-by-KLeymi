@@ -1280,9 +1280,9 @@
   description: A protective voidsuit worn by the leader of an emergency response team. # Goob edit
   components:
   - type: Sprite
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
   - type: Clothing
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitERTLeader
@@ -1295,9 +1295,9 @@
   description: A protective voidsuit worn by the chaplains of an Emergency Response Team. # Goob edit
   components:
   - type: Sprite
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi #if you change this, please update the humanoid.yml with a better markers sprite.
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi #if you change this, please update the humanoid.yml with a better markers sprite.
   - type: Clothing
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitERTChaplain
@@ -1310,9 +1310,9 @@
   description: A protective voidsuit worn by the engineers of an emergency response team. # Goob edit
   components:
   - type: Sprite
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
   - type: Clothing
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitERTEngineer
@@ -1327,9 +1327,9 @@
   description: A protective voidsuit worn by the medics of an emergency response team. # Goob edit
   components:
   - type: Sprite
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
   - type: Clothing
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitERTMedical
@@ -1342,9 +1342,9 @@
   description: A protective voidsuit worn by the security officers of an emergency response team. # Goob edit
   components:
   - type: Sprite
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
   - type: Clothing
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitERTSecurity
@@ -1361,9 +1361,9 @@
   description: A protective voidsuit worn by the janitors of an emergency response team. # Goob edit
   components:
   - type: Sprite
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
   - type: Clothing
-    sprite: _Maid/Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitERTJanitor
