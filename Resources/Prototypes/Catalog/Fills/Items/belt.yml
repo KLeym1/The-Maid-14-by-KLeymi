@@ -130,7 +130,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: CrowbarYellow
+      - id: Crowbar # Maid
       - id: Wrench
       - id: Screwdriver
       - id: Wirecutter
@@ -199,6 +199,7 @@
         amount: 2
       - id: FlashlightLantern
       - id: LightReplacer
+      - id: WireBrush
 
 - type: entity
   id: ClothingBeltMedicalFilled

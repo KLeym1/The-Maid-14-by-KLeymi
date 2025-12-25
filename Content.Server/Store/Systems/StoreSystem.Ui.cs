@@ -40,6 +40,7 @@ using Content.Shared._Goobstation.Wizard.Refund; // Goob
 using Content.Shared.Actions;
 using Content.Shared.Database;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Goobstation.Shared.ManifestListings;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Heretic; // Goob
 using Content.Shared.Heretic.Prototypes; // Goob
@@ -205,6 +206,14 @@ public sealed partial class StoreSystem
                 return;
             }
         }
+
+        // Goobstation start
+        if (_mind.TryGetMind(buyer, out var mindId, out _))
+        {
+            var ev = new ListingPurchasedEvent(buyer, uid, listing);
+            RaiseLocalEvent(mindId, ref ev);
+        }
+        // Goobstation end
 
         // if (!IsOnStartingMap(uid, component)) // Goob edit
         //     component.RefundAllowed = false;

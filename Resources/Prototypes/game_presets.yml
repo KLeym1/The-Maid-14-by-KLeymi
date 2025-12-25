@@ -71,10 +71,9 @@
   rules:
     - MeteorSwarmScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
+    # SpaceTrafficControlEventScheduler # Maid
+    # SpaceTrafficControlFriendlyEventScheduler # Maid
     - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: KesslerSyndrome
@@ -88,9 +87,8 @@
   rules:
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
+    # SpaceTrafficControlEventScheduler # Maid
     - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: AllAtOnce
@@ -112,9 +110,8 @@
     - Wizard
     - RampingStationEventScheduler
     - Changeling # Goobstation - changeling playtest
-    - SpaceTrafficControlEventScheduler
+    # SpaceTrafficControlEventScheduler # Maid
     - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: AllerAtOnce
@@ -141,11 +138,11 @@
     - MeteorSwarmMildScheduler # Goob Edit
     - MeteorSwarmScheduler # Goob edit
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
+    # SpaceTrafficControlEventScheduler # Maid
+    # SpaceTrafficControlFriendlyEventScheduler # Maid
     - BasicRoundstartVariation
     - Changeling # Goobstation - changeling playtest
-    - LavalandStormScheduler # Lavaland Change
+    - Shadowling # Einstein Engines - Shadowlings
 
 - type: gamePreset
   id: Extended
@@ -158,9 +155,8 @@
   rules:
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  # SpaceTrafficControlEventScheduler # Maid
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Greenshift
@@ -171,9 +167,8 @@
   showInVote: false #4boring4vote
   description: greenshift-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler
+  # SpaceTrafficControlFriendlyEventScheduler # Maid
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Secret
@@ -185,8 +180,6 @@
   description: secret-description
   rules:
     - Secret
-    - BasicStationEventScheduler
-    # - LavalandStormScheduler # Lavaland Change # All possible secret choices already contain this
 
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
@@ -198,9 +191,8 @@
   rules:
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
+    # SpaceTrafficControlEventScheduler # Maid
     - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
@@ -210,9 +202,8 @@
   showInVote: false #Admin Use
   description: secret-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler
+  # SpaceTrafficControlFriendlyEventScheduler # Maid
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Sandbox
@@ -239,9 +230,8 @@
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  # SpaceTrafficControlEventScheduler # Maid
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Deathmatch
@@ -269,9 +259,8 @@
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  # SpaceTrafficControlEventScheduler # Maid
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Revolutionary
@@ -288,9 +277,8 @@
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  # SpaceTrafficControlEventScheduler # Maid
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Zombie
@@ -307,9 +295,8 @@
   - Zombie
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  # SpaceTrafficControlEventScheduler # Maid
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Zombieteors
@@ -324,6 +311,5 @@
   - Zombie
   - BasicStationEventScheduler
   - KesslerSyndromeScheduler
-  - SpaceTrafficControlEventScheduler
+  # SpaceTrafficControlEventScheduler # Maid
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change

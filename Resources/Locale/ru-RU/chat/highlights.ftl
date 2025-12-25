@@ -28,7 +28,7 @@ highlights-medical-intern = Интерн, Доктор, "Док", Медбей, 
 highlights-paramedic = Парамедик, "Парамед", Доктор, "Док", "Медик", Медбей, "Мед", Медицинский
 # Science
 highlights-scientist = Ученый, Наука, "РНД", Робототехника, Робототехник, "Робо"
-highlights-research-assistant = Научный Ассистент, Ученый, Наука, "НИО", "РНД", Робототехника, Робототехник, "Робо"
+highlights-research-assistant = Научный Ассистент, Ученый, Наука, "РНД", Робототехника, Робототехник, "Робо"
 # Civilian
 highlights-bartender = Бармен, "Бар"
 highlights-botanist = Ботаник, Ботаника, Гидропоника
@@ -36,11 +36,11 @@ highlights-chaplain = Священник, Святоша
 highlights-chef = Шеф, Повар, Кухня
 highlights-clown = Клоун, Клуня, Хонк
 highlights-janitor = Уборщик
-highlights-passenger = Пассажир, Грейтайд
+highlights-passenger = Ассистент, Грейтайд
 highlights-lawyer = АВД, Адвокат
 highlights-librarian = Библиотекарь, Библиотека
 highlights-mime = Мим
-highlights-assistant = Пассажир, Грейтайд, Ассистент
+highlights-assistant = Ассистент, Грейтайд
 highlights-service-worker = Сервисный работник
 # Wildcards
 highlights-boxer = Боксер
