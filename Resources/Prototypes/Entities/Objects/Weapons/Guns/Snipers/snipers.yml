@@ -198,14 +198,6 @@
   components:
   - type: Sprite
     sprite: _Maid/Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
-  - type: Item  # Goob edit start
-    size: Large
-    storedRotation: 45
-  - type: Gun
-    fireRate: 1.2
-  - type: AltFireMelee
-    attackType: Heavy
-    sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
     layers:
     - state: base
     - state: base1
